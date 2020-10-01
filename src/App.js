@@ -3,19 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 import Footer from './Footer'
 import ToDo from './ToDo'
+import toDosData from "./ToDosData"
 
 
 function App() {
+  const toDoItem = toDosData.map(item => < ToDo key = {item.id} item= {item}/>)
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
        
-        < ToDo thing="Laundry"/>
-        < ToDo thing="Grocery"/>
-        < ToDo thing="Clean up"/>
-        < ToDo thing="Cooking"/>
-
+        {toDoItem}
         < Footer />
       </header>
     </div>
